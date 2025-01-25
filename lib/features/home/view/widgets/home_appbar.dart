@@ -10,6 +10,7 @@ AppBar homeAppBar() {
       color: Colors.black,
       fontSize: 24,
     ),
+    automaticallyImplyLeading: false,
     bottom: homeTabBar(),
   );
 }
