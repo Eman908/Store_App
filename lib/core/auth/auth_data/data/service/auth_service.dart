@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
+import 'package:store_app/core/cash/cash.dart';
 
 class AuthService {
   final Dio dio = Dio();
@@ -43,12 +44,12 @@ class AuthService {
 
     try {
       var jsonData = response.data;
-      // if (jsonData["status"] == "success") {
-      //   var newToken = jsonData["user"]["token"];
-      //   var nationalId = jsonData["user"]["nationalId"];
-      //   await CashToken.shared!.setString("nID", nationalId);
-      //   await CashToken.shared!.setString("token", newToken);
-      // }
+      if (jsonData["status"] == "success") {
+        var newToken = jsonData["user"]["token"];
+        var nationalId = jsonData["user"]["nationalId"];
+        await CashToken.shared!.setString("nID", nationalId);
+        await CashToken.shared!.setString("token", newToken);
+      }
       log(jsonData["message"]);
       return jsonData;
     } on DioException catch (e) {

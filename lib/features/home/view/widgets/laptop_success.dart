@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/features/cart/cubit/cart_cubit.dart';
+import 'package:store_app/features/favorites/cubit/favorite_cubit.dart';
 import 'package:store_app/features/home/data/model/laptop_model.dart';
 
 class LaptopSuccess extends StatelessWidget {
@@ -70,7 +72,10 @@ class LaptopSuccess extends StatelessWidget {
               children: [
                 Expanded(
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      CartCubit.get(context)
+                          .getAddToCartCubit(productId: laptopModel.productId);
+                    },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8)),
                     color: Colors.blueGrey,
@@ -84,9 +89,9 @@ class LaptopSuccess extends StatelessWidget {
                   backgroundColor: Colors.grey.shade300,
                   child: IconButton(
                     onPressed: () {
-                      // FavoriteCubit.get(context).addToFavoriteCubit(
-                      //   productId: productsModel.productId,
-                      // );
+                      FavoriteCubit.get(context).addToFavoriteCubit(
+                        productId: laptopModel.productId,
+                      );
                     },
                     icon: const Icon(
                       Icons.favorite_border,

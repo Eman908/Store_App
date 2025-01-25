@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:store_app/core/auth/auth_widgets/input_border_style.dart';
 
 class GenderSelector extends StatefulWidget {

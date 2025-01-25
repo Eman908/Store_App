@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:store_app/features/profile/cubit/profile_cubit.dart';
 import 'package:store_app/features/profile/cubit/profile_state.dart';
+import 'package:store_app/features/profile/view/widgets/profile_success.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -22,7 +23,7 @@ class ProfileScreen extends StatelessWidget {
       body: BlocBuilder<ProfileCubit, ProfileState>(
         builder: (context, state) {
           if (state is ProfileSucess) {
-            return Text(state.profileModel.userProfileModel.name);
+            return ProfileSuccessPage(profileModel: state.profileModel);
           } else {
             return const Center(child: CircularProgressIndicator());
           }

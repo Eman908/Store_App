@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/features/cart/view/screen/cart_screen.dart';
+import 'package:store_app/features/favorites/view/screen/favorite_screen.dart';
 import 'package:store_app/features/home/cubit/home_cubit.dart';
 import 'package:store_app/features/home/cubit/home_state.dart';
 import 'package:store_app/features/home/view/screen/home_screen.dart';
@@ -11,8 +13,8 @@ class MainScreen extends StatelessWidget {
 
   final List<Widget> pages = [
     const HomeScreen(),
-    const Center(child: Text("hole")),
-    const Center(child: Text("hole")),
+    const FavoriteScreen(),
+    const CartScreen(),
     const ProfileScreen(),
   ];
 

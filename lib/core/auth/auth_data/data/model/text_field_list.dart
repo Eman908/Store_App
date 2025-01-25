@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:store_app/core/validator/validator.dart';
 import 'package:store_app/core/auth/auth_data/data/model/text_field_model.dart';
 import 'package:store_app/features/auth_login/view/screen/login_screen.dart';
@@ -66,10 +65,3 @@ List<TextFieldModel> loginList = [
     },
   ),
 ];
-
-class CashToken {
-  static SharedPreferences? shared;
-  static init() async {
-    shared = await SharedPreferences.getInstance();
-  }
-}
