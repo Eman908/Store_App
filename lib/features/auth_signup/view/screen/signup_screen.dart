@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:store_app/core/auth/cubit/auth_cubit.dart';
 import 'package:store_app/core/auth/cubit/auth_state.dart';
 import 'package:store_app/core/auth/auth_widgets/form_appbar.dart';
+import 'package:store_app/features/auth_login/view/screen/login_screen.dart';
 import 'package:store_app/features/auth_signup/view/widgets/signup_form_builder.dart';
 
 final TextEditingController nameController = TextEditingController();
@@ -36,9 +37,9 @@ class _SignupScreenState extends State<SignupScreen> {
                   content: Text(state.authData["message"]),
                 ),
               );
-              // Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-              //   return const LoginScreen();
-              // }));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const LoginScreen();
+              }));
             }
             if (state.authData["status"] == "error") {
               ScaffoldMessenger.of(context).showSnackBar(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/features/description/view/screen/des_screen.dart';
 import 'package:store_app/features/home/cubit/home_cubit.dart';
 import 'package:store_app/features/home/cubit/home_state.dart';
 import 'package:store_app/features/home/view/widgets/laptop_success.dart';
@@ -27,11 +28,10 @@ class LaptopBuilder extends StatelessWidget {
                   (index) {
                     return GestureDetector(
                       onTap: () {
-                        // Navigator.of(context)
-                        //     .push(MaterialPageRoute(builder: (context) {
-                        //   return ProductDescription(
-                        //       productsModel: state.productData[index]);
-                        // }));
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
+                          return DesScreen(laptopModel: state.lapModel[index]);
+                        }));
                       },
                       child: LaptopSuccess(
                         laptopModel: state.lapModel[index],

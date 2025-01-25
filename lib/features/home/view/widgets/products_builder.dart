@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/features/description/view/screen/des2_screen.dart';
 import 'package:store_app/features/home/cubit/home_cubit.dart';
 import 'package:store_app/features/home/cubit/home_state.dart';
 import 'package:store_app/features/home/view/widgets/product_success_widgets.dart';
@@ -28,11 +29,11 @@ class ProductsBuilder extends StatelessWidget {
                   (index) {
                     return GestureDetector(
                       onTap: () {
-                        // Navigator.of(context)
-                        //     .push(MaterialPageRoute(builder: (context) {
-                        //   return ProductDescription(
-                        //       productsModel: state.productData[index]);
-                        // }));
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
+                          return Des2Screen(
+                              productsModel: state.productsModel[index]);
+                        }));
                       },
                       child: ProductSuccessWidget(
                         productsModel: state.productsModel[index],
